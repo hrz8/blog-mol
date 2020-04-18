@@ -128,13 +128,13 @@ module.exports = {
     middlewares: [],
   
     // Called after broker created.
-    created() {},
+    created(broker) {},
   
     // Called after broker starte.
-    started() {},
+    started(broker) {},
   
     // Called after broker stopped.
-    stopped() {},
+    stopped(broker) {},
   
     // Register custom REPL commands.
     replCommands: null
