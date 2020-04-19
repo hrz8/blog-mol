@@ -2,9 +2,9 @@
   "name": "blog-mole",
   "version": "1.0.0",
   "description": "simple blog services using moleculer",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "nodemon --inspect gateway.js"
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,6 @@
     "objection-find": "^2.1.0"
   },
   "devDependencies": {
-    "eslint": "^6.8.0"
+    "nodemon": "^2.0.3"
   }
 }
