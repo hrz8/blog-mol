@@ -17,7 +17,29 @@ module.exports = {
     // Namespace of nodes to segment your nodes on the same network.
     namespace: "blog",
     // Unique node identifier. Must be unique in a namespace.
-    nodeID: null,
+    nodeID: 'blog-node',
+
+    // Define transporter.
+    // More info: https://moleculer.services/docs/0.13/networking.html
+
+    transporter: 'nats://localhost:4222',
+
+    // Define a cacher.
+    // More info: https://moleculer.services/docs/0.13/caching.html
+    // cacher: 'Memory',
+    cacher: {
+        type: 'Redis',
+        options: {
+            // Prefix for keys
+            prefix: 'mol-policy',
+            // set Time-to-live to 60sec.
+            ttl: 300,
+            // Turns Redis client monitoring on.
+            monitor: false,
+            // Redis settings
+            redis: 'redis://localhost:6379'
+        }
+    },
   
     // Enable/disable logging or use custom logger. More info: https://moleculer.services/docs/0.13/logging.html
     logger: true,
@@ -34,7 +56,8 @@ module.exports = {
     serializer: "JSON",
   
     // Number of milliseconds to wait before reject a request with a RequestTimeout error. Disabled: 0
-    requestTimeout: 10 * 1000,
+    // requestTimeout: 10 * 1000,
+    requestTimeout: 0,
   
     // Retry policy settings. More info: https://moleculer.services/docs/0.13/fault-tolerance.html#Retry
     retryPolicy: {
