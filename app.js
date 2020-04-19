@@ -3,7 +3,7 @@ const config = require('./moleculer.config');
 
 const broker = new ServiceBroker(config);
 
-broker.loadService('./domains/api.service.js');
+broker.loadServices('./domains', '**/*service.js');
 
 broker
     .start()

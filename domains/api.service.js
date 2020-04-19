@@ -11,7 +11,7 @@ module.exports = {
             {
                 path: '/api/posts',
                 aliases: {
-                    'GET ': 'policies.list',
+                    'GET ': 'posts.list',
                 }
             }
         ]

@@ -1,13 +1,38 @@
 module.exports = {
     name: 'posts',
     actions: {
-        welcome: {
+        list: {
             params: {
-                name: "string"
+                name: 'string'
             },
-            handler(ctx) {
+            handler: ctx => {
                 return `Welcome, ${ctx.params.name}`;
             }
         }
     },
+
+    /**
+     * Events
+     */
+    events: {},
+
+    /**
+     * Methods
+     */
+    methods: {},
+
+    /**
+     * Service created lifecycle event handler
+     */
+    created() {},
+
+    /**
+     * Service started lifecycle event handler
+     */
+    started() {},
+
+    /**
+     * Service stopped lifecycle event handler
+     */
+    stopped() {}
 }
